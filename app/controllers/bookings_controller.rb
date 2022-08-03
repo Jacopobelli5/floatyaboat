@@ -1,7 +1,10 @@
 class BookingsController < ApplicationController
-
-  def new
+  def index
     @booking = Booking.all
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def create
@@ -23,10 +26,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(booking_params)
     @booking.update(booking_params)
     redirect to booking_path(@booking)
-  end
-
-  def show
-    @boat = Boat.find(params[:id])
   end
 
   private
