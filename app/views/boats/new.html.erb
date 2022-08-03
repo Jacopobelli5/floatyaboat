@@ -5,10 +5,11 @@
         <h3>Create a new boat</h3>
         <%= simple_form_for @boat do |f| %>
           <%= f.input :name, placeholder: 'name' %>
-          <%= f.input :type %>
+          <%= f.input :boat_type %>
           <%= f.input :address %>
           <%= f.input :description %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.input :price %>
+          <%= f.submit class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
