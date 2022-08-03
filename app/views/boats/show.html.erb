@@ -1,7 +1,9 @@
-<div class="container">
 <% @boat.each do |b| %>
 <p><%= b.name %></p>
 <p><%= b.type %></p>
 <p><%= b.category %></p>
 
-</div>
+<%= link_to 'Delete',
+  boat_path(@boat),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
