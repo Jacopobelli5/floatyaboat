@@ -1,6 +1,12 @@
-<div class= "container">
+<h1>Boats</h1>
+<div class= "row text-center p-3">
 <% @boats.each do |boat| %>
-<%= boat.name %>
-<%= boat.description %>
+<div class= "col">
+<p><%= boat.name %></p>
+<p><%= boat.address %></p>
+<p><%= boat.boat_type %></p>
+<p><%= boat.price %></p>
+</div>
+<br>
 <% end %>
 </div>
