@@ -18,3 +18,95 @@
 #  )
 #  puts "boat with id #{boat.id} has been created!"
 #end
+
+User.destroy_all
+puts "create user"
+user1 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+user2 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+user3 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+user4 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+user5 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+user6 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+user7 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+user8 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
+
+
+puts "create boat"
+boat1 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user1.id
+)
+
+puts "create boat"
+boat2 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user2.id
+)
+
+puts "create boat"
+boat3 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user3.id
+)
+
+puts "create boat"
+boat4 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user4.id
+)
+
+puts "create boat"
+boat5 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user5.id
+)
+
+puts "create boat"
+boat6 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user6.id
+)
+
+puts "create boat"
+boat7 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user7.id
+)
+
+puts "create boat"
+boat8 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user8.id
+)
