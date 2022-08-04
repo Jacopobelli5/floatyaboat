@@ -1,9 +1,23 @@
-<% @boat.each do |b| %>
-<p><%= b.name %></p>
-<p><%= b.type %></p>
-<p><%= b.category %></p>
-
+<div>
+<h2> Book <%= @boat.name%> now!</h2>
+<div>
+<p><%= @boat.boat_type.capitalize %></p>
+<p><%= @boat.address %></p>
+<p><%= @boat.description %></p>
+<p>£<%= @boat.price %>.00 / day</p>
+</div>
+<div>
+<%# This link should only be visible to Customers %>
+<%= link_to "Book this boat", new_boat_booking_path(@boat) %>
+<br>
+<%= link_to 'Choose another',
+  boats_path
+%>
+<br>
+<%# Delete should only be visible to Owner %>
 <%= link_to 'Delete',
   boat_path(@boat),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+<br>
+</div>

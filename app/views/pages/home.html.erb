@@ -1,4 +1,14 @@
-<h1>Pages#home</h1>
+<button type="button" class="btn btn-light">
+  <a href="#">About us</a>
+</button>
+<button type="button" class="btn btn-light">
+  <%= link_to "Log in", new_user_session_path %>
+</button>
+<button type="button" class="btn btn-light">
+  <%= link_to "Sign up", new_user_registration_path %>
+</button>
+
+<h1>It's time to Float Your Boat!</h1>
+<h2>The best solution for your boat hire plans</h2>
 <p>Find me in app/views/pages/home.html.erb</p>
-<p>Hello</p>
-<%= link_to "see boats", boats_path %>
+<%= link_to "See all boats", boats_path %>

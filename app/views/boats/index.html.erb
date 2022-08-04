@@ -1,12 +1,17 @@
 <h1>Boats</h1>
-<div class= "row text-center p-3">
-<% @boats.each do |boat| %>
-<div class= "col">
-<p><%= boat.name %></p>
-<p><%= boat.address %></p>
-<p><%= boat.boat_type %></p>
-<p><%= boat.price %></p>
-</div>
-<br>
+  <div class= "row text-center p-3">
+  <% @boats.each do |boat| %>
+  <%= link_to boat do %>
+    <div class= "card">
+        <p><%= boat.name %></p>
+        <p><%= boat.address %></p>
+        <p><%= boat.boat_type %></p>
+        <p><%= boat.price %></p>
+    </div>
+    <br>
 <% end %>
-</div>
+<% end %>
+ </div>
+<%= link_to "List your boat", new_boat_path %>
+<br>
+<%= link_to "Back to home page", root_path %>
