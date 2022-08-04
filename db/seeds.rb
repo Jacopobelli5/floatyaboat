@@ -20,7 +20,14 @@
 #end
 
 User.destroy_all
-puts "create user"
+# following 2 lines of code reset the id count back to 1, useful in dev testing
+# but not real life behaviour. We will delete these later.
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('boats')
+
+puts "cleaning database...resetting ID count"
+
+puts "creating users..."
 user1 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
 user2 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
 user3 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
@@ -29,7 +36,7 @@ user5 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, passw
 user6 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
 user7 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
 user8 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "pas$word1")
-
+puts "users created"
 
 puts "create boat"
 boat1 = Boat.create!(
@@ -110,3 +117,4 @@ boat8 = Boat.create!(
   boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
   user_id: user8.id
 )
+puts "Finished"
