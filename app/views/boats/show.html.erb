@@ -8,11 +8,14 @@
 </div>
 <div>
 <%# This link should only be visible to Customers %>
+<%= render "reviews" %>
 <%= link_to "Book this boat", new_boat_booking_path(@boat) %>
 <br>
 <%= link_to 'Choose another',
   boats_path
 %>
+<br>
+<%= link_to "Review this boat", new_boat_review_path(@boat) %>
 <br>
 <%# Delete should only be visible to Owner %>
 <%= link_to 'Delete',
