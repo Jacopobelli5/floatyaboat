@@ -1,7 +1,0 @@
-<%= simple_form_for [@boat, @review] do |f| %>
-  <%= f.label :rating, "Enter your rating" %>
-  <br>
-  <%= f.select :rating, options_for_select([("Select"), 1, 2, 3, 4, 5] ) %>
-  <%= f.input :content, placeholder:"Comment your experience" %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
