@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
+  before_action :set_boat, only: [:new, :create]
   def index
     @booking = Booking.all
+  end
+
+  def new
+    @booking = Booking.new
   end
 
   def show
@@ -9,13 +14,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user # helper from devise gem
+    @booking.user = current_user
     @booking.boat = Boat.find(params[:boat_id])
-    if @booking.save
-      redirect_to booking_path(@booking)
-    else
-      render "new"
-    end
+    @booking.save
+    redirect_to booking_path(@booking)
   end
 
   def edit
@@ -31,6 +33,10 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :boat_id)
+  end
+
+  def set_boat
+    @boat = Boat.find(params[:boat_id])
   end
 end
