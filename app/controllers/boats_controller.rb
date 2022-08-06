@@ -13,6 +13,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.user = current_user
     if @boat.save
       redirect_to boat_path(@boat)
     else
@@ -38,7 +39,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :boat_type, :address, :price, :description)
+    params.require(:boat).permit(:name, :boat_type, :address, :price, :description, photos: [])
   end
 
   def set_boat

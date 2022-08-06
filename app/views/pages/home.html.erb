@@ -1,12 +1,20 @@
 <button type="button" class="btn btn-light">
   <a href="#">About us</a>
 </button>
+
 <button type="button" class="btn btn-light">
   <%= link_to "Log in", new_user_session_path %>
 </button>
+
 <button type="button" class="btn btn-light">
   <%= link_to "Sign up", new_user_registration_path %>
 </button>
+
+<% if user_signed_in?  %>
+<button class= "btn btn-light">
+<%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }  %>
+</button>
+<% end %>
 
 <h1>It's time to Float Your Boat!</h1>
 <h2>The best solution for your boat hire plans</h2>

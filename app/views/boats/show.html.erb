@@ -1,18 +1,26 @@
 <div>
 <h2> Book <%= @boat.name%> now!</h2>
 <div>
+<% @boat.photos.each do |photo| %>
+<%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+<% end %>
+<div>
 <p><%= @boat.boat_type.capitalize %></p>
 <p><%= @boat.address %></p>
 <p><%= @boat.description %></p>
 <p>£<%= @boat.price %>.00 / day</p>
+<p>⭐<%= @boat.average_rating %></p>
 </div>
 <div>
 <%# This link should only be visible to Customers %>
+<%= render "reviews" %>
 <%= link_to "Book this boat", new_boat_booking_path(@boat) %>
 <br>
 <%= link_to 'Choose another',
   boats_path
 %>
+<br>
+<%= link_to "Review this boat", new_boat_review_path(@boat) %>
 <br>
 <%# Delete should only be visible to Owner %>
 <%= link_to 'Delete',
