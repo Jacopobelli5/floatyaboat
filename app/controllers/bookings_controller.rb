@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_boat
+  before_action :set_boat, only: [:new, :create]
   def index
     @booking = Booking.all
   end
@@ -14,13 +14,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user # helper from devise gem
-    @booking.boat = @boat
-    if @booking.save
-      # redirect_to booking_path(@booking)
-    else
-      render "new"
-    end
+    @booking.user = current_user
+    @booking.boat = Boat.find(params[:boat_id])
+    @booking.save
+    redirect_to booking_path(@booking)
   end
 
   def edit
