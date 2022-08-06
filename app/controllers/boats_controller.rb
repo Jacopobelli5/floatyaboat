@@ -1,7 +1,12 @@
 class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :destroy] # <- optional addd :edit and :update
+
   def index
-    @boats = Boat.all
+    if params[:query].present?
+      @boats = Boat.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @boats = Boat.all
+    end
   end
 
   def show

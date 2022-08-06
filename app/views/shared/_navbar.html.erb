@@ -7,10 +7,18 @@
 
       <form class="form-inline">
         <button type="button" class="btn btn-white">
+        <%= link_to "About us", about_path %>
+        </button>
+        <button type="button" class="btn btn-white">
         <% if user_signed_in? %>
         <%= link_to "List your boat", new_boat_path %>
         <% else %>
         <%= link_to "List your boat", new_user_session_path %>
+        </button>
+        <% end %>
+        <% if user_signed_in?  %>
+        <button class= "button" class="btn btn-white">
+        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }  %>
         </button>
         <% end %>
         <button type="button" class="btn btn-white">
