@@ -1,14 +1,25 @@
-<button type="button" class="btn btn-light">
-  <a href="#">About us</a>
-</button>
-<button type="button" class="btn btn-light">
-  <%= link_to "Log in", new_user_session_path %>
-</button>
-<button type="button" class="btn btn-light">
-  <%= link_to "Sign up", new_user_registration_path %>
-</button>
+<nav class="navbar navbar-light bg-light ">
+      <img <%= asset_path('logo.png') %>
+      <form class="form-inline">
+        <button type="button" class="btn btn-light">
+        <%= link_to "List your boat", new_user_session_path %>
+        </button>
+        <button type="button" class="btn btn-light">
+        <%= link_to "Log in", new_user_session_path %>
+        </button>
+        <button type="button" class="btn btn-light">
+        <%= link_to "Sign up", new_user_registration_path %>
+        </button>
+        <button type="button" class="btn btn-light">
+        <a href="#">About us</a>
+        </button>
+      </form>
+</nav>
 
-<h1>It's time to Float Your Boat!</h1>
-<h2>The best solution for your boat hire plans</h2>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "See all boats", boats_path %>
+<div class="container">
+
+
+  <h1>It's time to Float Your Boat!</h1>
+  <h2>The best solution for your boat hire plans</h2>
+  <%= link_to "See all boats", boats_path %>
+</div>
