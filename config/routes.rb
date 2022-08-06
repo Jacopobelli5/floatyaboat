@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :edit]
     resources :reviews, only: [ :new, :create ]
   end
-  resources :bookings, only: [:show] # localhost:3000/bookings/1/show
+  resources :bookings, only: [:show]
 end
