@@ -1,8 +1,8 @@
 <div>
-<h2> Book <%= @boat.name%> now!</h2>
+<h1><%= @boat.name%></h1>
 <div>
 <% @boat.photos.each do |photo| %>
-<%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+<%= cl_image_tag photo.key, height: 200, width: 300, crop: :fit %>
 <% end %>
 <div>
 <p><%= @boat.boat_type.capitalize %></p>
