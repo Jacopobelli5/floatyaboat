@@ -7,5 +7,13 @@ class Boat < ApplicationRecord
 
   # validations
   validates :name, :address, :price, :boat_type, presence: true
-  validates :description, presence: true, length: { minimum: 160 }
+  validates :description, presence: true, length: { minimum: 10 }
+
+  def average_rating
+    if reviews.size.positive?
+      reviews.average(:rating)
+    else
+      'No ratings yet'
+    end
+  end
 end

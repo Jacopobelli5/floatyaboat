@@ -1,0 +1,15 @@
+
+<nav class="navbar navbar-light bg-light p-3 mb-3 border-bottom bg-white">
+      <img class="logo" src=" <%= asset_path('logo.png') %> " alt="logo" width="100px">
+      <form class="form-inline">
+        <button type="button" class="btn btn-white">
+        <%= link_to "List your boat", new_user_session_path %>
+        </button>
+        <button type="button" class="btn btn-white">
+        <%= link_to "Log in", new_user_session_path %>
+        </button>
+        <button type="button" class="btn btn-white">
+        <%= link_to "Sign up", new_user_registration_path %>
+        </button>
+      </form>
+</nav>

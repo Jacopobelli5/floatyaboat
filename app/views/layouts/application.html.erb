@@ -10,7 +10,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="bg-white">
+  <%= render 'shared/navbar' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <div class = "container text-center">

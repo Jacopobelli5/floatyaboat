@@ -1,22 +1,16 @@
-<button type="button" class="btn btn-light">
-  <a href="#">About us</a>
-</button>
+<div class="container">
+  <img class="img-fluid img-responsive w-100" src="<%= asset_path('banner.svg') %>" style="width:100%;">
+  <h1>It's time to Float Your Boat!</h1>
+  <h2>The best solution for your boat hire plans</h2>
+  <%= link_to "See all boats", boats_path %>
+</div>
 
-<button type="button" class="btn btn-light">
-  <%= link_to "Log in", new_user_session_path %>
-</button>
-
-<button type="button" class="btn btn-light">
-  <%= link_to "Sign up", new_user_registration_path %>
-</button>
-
-<% if user_signed_in?  %>
-<button class= "btn btn-light">
-<%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }  %>
-</button>
-<% end %>
-
-<h1>It's time to Float Your Boat!</h1>
-<h2>The best solution for your boat hire plans</h2>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "See all boats", boats_path %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
