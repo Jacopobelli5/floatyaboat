@@ -1,1 +1,7 @@
-<h1>New booking page</h1>
+<h1>Hire a boat</h1>
+
+<%= simple_form_for [@boat, @booking] do |f| %>
+  <%= f.input :boat %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+<% end %>
