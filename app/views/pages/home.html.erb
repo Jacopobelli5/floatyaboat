@@ -8,6 +8,9 @@
 <br>
 <br>
 <%= render "shared/search" %>
+<% @boats.each do |boat| %>
+<p><%= boat.name %></p>
+<% end %>
 <br>
 <br>
 <br>
