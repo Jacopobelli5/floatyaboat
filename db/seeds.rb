@@ -22,8 +22,8 @@
 User.destroy_all
 # following 2 lines of code reset the id count back to 1, useful in dev testing
 # but not real life behaviour. We will delete these later.
-ActiveRecord::Base.connection.reset_pk_sequence!('users')
-ActiveRecord::Base.connection.reset_pk_sequence!('boats')
+#ActiveRecord::Base.connection.reset_pk_sequence!('users')
+#ActiveRecord::Base.connection.reset_pk_sequence!('boats')
 
 puts "cleaning database...resetting ID count"
 
