@@ -1,25 +1,27 @@
-<nav class="navbar navbar-light bg-light ">
-      <img <%= asset_path('logo.png') %>
-      <form class="form-inline">
-        <button type="button" class="btn btn-light">
-        <%= link_to "List your boat", new_user_session_path %>
-        </button>
-        <button type="button" class="btn btn-light">
-        <%= link_to "Log in", new_user_session_path %>
-        </button>
-        <button type="button" class="btn btn-light">
-        <%= link_to "Sign up", new_user_registration_path %>
-        </button>
-        <button type="button" class="btn btn-light">
-        <a href="#">About us</a>
-        </button>
-      </form>
-</nav>
-
 <div class="container">
-
-
-  <h1>It's time to Float Your Boat!</h1>
-  <h2>The best solution for your boat hire plans</h2>
-  <%= link_to "See all boats", boats_path %>
+  <img class="img-fluid img-responsive w-100" src="<%= asset_path('banner.svg') %>" style="width:100%;">
+  <div class="search-bar mt-5 p-3 p-lg-1 ps-lg-4 bg-white border">
+    <form action="#">
+      <div class="row">
+        <div class="col-lg-4 d-flex align-items-center form-group">
+          <input class="form-control border-0 shadow-0" type="text" name="search" placeholder="Where would you like to go boating?">
+        </div>
+        <div class="col-lg-3 d-flex align-items-center form-group">
+          <div class="input-label-absolute input-label-absolute-right w-100">
+            <label class="label-absolute" for="location"><span class="sr-only">City</span></label>
+            <input class="form-control border-0 shadow-0" type="text" name="date" placeholder="Any date?" id="date">
+          </div>
+        </div>
+        <div class="col-lg-3 d-flex align-items-center form-group">
+          <div class="input-label-absolute input-label-absolute-right w-100">
+            <label class="label-absolute" for="location"><span class="sr-only">City</span></label>
+            <input class="form-control border-0 shadow-0" type="text" name="type" placeholder="Any type?" id="type">
+          </div>
+        </div>
+        <div class="col-lg-2 d-grid">
+          <button class="btn btn-primary rounded-pill h-100" type="submit">Search </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
