@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings
   end
-  # resources :bookings, only: [:show] # localhost:3000/bookings/1/show
+  resources :bookings, only: [:show] # localhost:3000/bookings/1/show
 end
