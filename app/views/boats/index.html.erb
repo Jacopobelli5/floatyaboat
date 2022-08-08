@@ -1,13 +1,15 @@
 <h1>Boats</h1>
-  <div class= "row text-center p-3">
+  <div class= "cards">
   <% @boats.each do |boat| %>
   <%= link_to boat do %>
-    <div class= "card">
+    <div class= "card-boat">
+      <div class="card-boat-infos">
         <p><%= boat.name %></p>
         <p><%= boat.address %></p>
         <p><%= boat.boat_type %></p>
-        <p><%= boat.price %></p>
-        <p>⭐<%= boat.average_rating %></p>
+        <p><strong>£<%= boat.price %>.00/day</strong></p>
+        <p>⭐<%=boat.average_rating %></p>
+      </div>
     </div>
     <br>
 <% end %>
