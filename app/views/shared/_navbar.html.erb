@@ -1,31 +1,26 @@
 
 <nav class="navbar navbar-light bg-light p-3 mb-3 border-bottom bg-white">
-
       <%= link_to root_path do %>
       <img class="logo" src=" <%= asset_path('logo.png') %>" alt="logo" width="100px">
       <% end %>
 
       <form class="form-inline">
-        <button type="button" class="btn btn-white">
-        <%= link_to "About us", about_path %>
-        </button>
-        <button type="button" class="btn btn-white">
+        <%= link_to "About us", about_path, class: "btn btn-secondary btn-rounded" %>
+
         <% if user_signed_in? %>
-        <%= link_to "List your boat", new_boat_path %>
+        <%= link_to "List your boat", new_boat_path, class: "btn btn-secondary btn-rounded" %>
         <% else %>
-        <%= link_to "List your boat", new_user_session_path %>
-        </button>
+        <%= link_to "List your boat", new_user_session_path, class: "btn btn-secondary btn-rounded" %>
         <% end %>
+
         <% if user_signed_in?  %>
-        <button class= "button" class="btn btn-white">
-        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }  %>
-        </button>
+        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-secondary btn-rounded"  %>
         <% end %>
-        <button type="button" class="btn btn-white">
-        <%= link_to "Log in", new_user_session_path %>
-        </button>
-        <button type="button" class="btn btn-white">
-        <%= link_to "Sign up", new_user_registration_path %>
-        </button>
+
+        <% if !user_signed_in? %>
+        <%= link_to "Log in", new_user_session_path, class: "btn btn-secondary btn-rounded" %>
+
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-rounded" %>
+        <% end %>
       </form>
 </nav>
