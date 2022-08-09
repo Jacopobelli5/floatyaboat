@@ -1,10 +1,29 @@
-<div class="container">
-<%= form_tag boats_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a boat"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="search-bar mt-5 p-3 p-lg-1 ps-lg-4 bg-white border">
+    <form action="#">
+      <div class="row p-1">
+        <div class="col-lg-4 d-flex align-items-center form-group">
+          <input class="form-control border-0 shadow-0" type="text" name="search" placeholder="Where would you like to go boating?">
+        </div>
+        <div class="col-lg-3 d-flex align-items-center form-group">
+          <div class="input-label-absolute input-label-absolute-right w-100">
+            <input class="form-control border-0 shadow-0" type="text" name="date" placeholder="Any date?" id="date">
+          </div>
+        </div>
+        <div class="col-lg-3 d-flex align-items-center form-group">
+          <div class="input-label-absolute input-label-absolute-right w-100">
+            <input class="form-control border-0 shadow-0" type="text" name="type" placeholder="Any type?" id="type">
+          </div>
+        </div>
+        <div class="col-lg-2 d-grid">
+        <%= form_tag boats_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a boat"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+      </div>
+    </form>
 </div>

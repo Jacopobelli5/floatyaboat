@@ -1,15 +1,20 @@
-<img class="img-fluid img-responsive w-100" src="<%= asset_path('banner.svg') %>" style="width:100%;">
-<br>
-<h1>It's time to <img class="img-fluid" src="<%= asset_path('logoname.png') %>" style="width:20%;"> !</h1>
-<h2>The best solution for your boat hire plans</h2>
-<%= link_to "Discover", boats_path, class: "btn btn-primary" %>
-<br>
-<br>
-<%= render "shared/search" %>
-<br>
-<br>
+<div class="container">
+  <div class="well full-width">
+  <img class="banner" src="<%= asset_path('banner.png') %>">
+    <div class="centered">
+      <h1>It's time to <img class="img-fluid" src="<%= asset_path('logoname.png') %>" style="width:30%;"> !</h1>
+      <h2>The best solution for your boat hire plans</h2>
+    </div>
+  </div>
+  <br>
 
-<div class= "container text-center">
+  <br>
+  <%= link_to "Discover", boats_path, class: "btn btn-primary " %>
+  <br>
+  <br>
+  <%= render "shared/search" %>
+  <br>
+  <br>
   <div class= "row">
     <% @boats.each do |boat| %>
       <div class= "col-4">
