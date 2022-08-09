@@ -10,6 +10,13 @@ class BoatsController < ApplicationController
       # @boats = Boat.all
       @boats = policy_scope(Boat)
     end
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { boat: boat })
+      }
+    end
   end
 
   def show
