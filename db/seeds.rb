@@ -117,4 +117,14 @@ boat8 = Boat.create!(
   boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
   user_id: user8.id
 )
+
+puts "create boat"
+boat9 = Boat.create!(
+  name: Faker::TvShows::Friends.character,
+  address: Faker::TvShows::Friends.location,
+  price: rand(100..1500),
+  description: Faker::Lorem.paragraph(sentence_count: 30, supplemental: true),
+  boat_type: ["fishing boat", "deck boat", "cruise", "cabin boat"].sample,
+  user_id: user8.id
+)
 puts "Finished"

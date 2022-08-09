@@ -12,26 +12,31 @@
 .centered {
   position: absolute;
   text-align: left;
-  top: 25%;
+  top: 30%;
   left: 40%;
   transform: translate(-50%, -50%);
   text-shadow: 1px 1px 1px #000;
+  display: block;
 }
 
-.header1 {
-  border-radius: 1px solid red;
-  font-size: 150px;
+h1 {
+  font-size: 50px;
+}
+
+h2{
+  font-size: 30px;
+  font-family: $headers-font;
+  text-shadow: 0.1px 0.1px 0.1px #000;
 }
 
 p {
   font-size: 16px;
 }
 
-h2{
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif  ;
-}
-
-h1 {
-  font-size: 50px;
+.search-box {
+  margin: auto;
+  width: 100%;
+  display: block;
+  margin-left: 100px;
+  margin-right: 100px;
 }

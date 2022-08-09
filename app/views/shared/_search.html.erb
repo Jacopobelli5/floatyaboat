@@ -1,12 +1,15 @@
-<div class="search-bar mt-5 p-3 p-lg-1 ps-lg-4 bg-white border">
+<div class="search-bar mt-3 p-3 p-lg-1 ps-lg-4 bg-white border">
     <form action="#">
-      <div class="row p-1">
+      <div class="row px-2">
         <div class="col-lg-4 d-flex align-items-center form-group">
           <input class="form-control border-0 shadow-0" type="text" name="search" placeholder="Where would you like to go boating?">
         </div>
-        <div class="col-lg-3 d-flex align-items-center form-group">
+        <div class="col-lg-3 d-flex align-items-center form-group ">
           <div class="input-label-absolute input-label-absolute-right w-100">
-            <input class="form-control border-0 shadow-0" type="text" name="date" placeholder="Any date?" id="date">
+            <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
+          </div>
+          <div class="input-label-absolute input-label-absolute-right w-100">
+            <input class="form-control border-0 shadow-0" type="text" placeholder="End date" id="date" onfocus="(this.type='date')">
           </div>
         </div>
         <div class="col-lg-3 d-flex align-items-center form-group">
@@ -21,7 +24,7 @@
           class: "form-control",
           placeholder: "Find a boat"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "Search", style: "font-weight:600", class: "btn btn-info text-black" %>
         <% end %>
         </div>
       </div>
