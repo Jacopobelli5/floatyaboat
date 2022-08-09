@@ -4,35 +4,20 @@
     <div class="centered">
       <h1>It's time to <img class="img-fluid" src="<%= asset_path('logoname.png') %>" style="width:30%;"> !</h1>
       <h2>The best solution for your boat hire plans</h2>
+        <div class="search-box">
+        <%= render "shared/search" %>
+        </div>
     </div>
   </div>
   <br>
 
   <br>
-  <%= link_to "Discover", boats_path, class: "btn btn-primary " %>
+  <%= link_to "Explore Boats", boats_path, style: "font-weight:600", class: "btn btn-primary text-white" %>
   <br>
   <br>
-  <%= render "shared/search" %>
   <br>
-  <br>
-  <div class= "row">
-    <% @boats.each do |boat| %>
-      <div class= "col-4">
-        <div class="card-trip mt-3">
-          <% boat.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fit %>
-          <% end %>
-          <div class="card-trip-infos">
-            <div>
-            <h2><%= boat.name %></h2>
-            <p><%= truncate(boat.description, :length => 50) %></p>
-          </div>
-          <h2 class="card-trip-pricing">£ <%= boat.price %>.00</h2>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
+  <h2>Our Community Favorites</h2>
+  <%= render "shared/card" %>
 </div>
 
 <br>
