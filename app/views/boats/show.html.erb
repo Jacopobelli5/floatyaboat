@@ -12,22 +12,33 @@
 <p>⭐<%= @boat.average_rating %></p>
 </div>
 <div>
-<%# This link should only be visible to Customers %>
+
 <%= render "reviews" %>
+<%# An owner of a boat can't book his own boat %>
+<% unless policy(@boat).edit? %>
 <%= link_to "Book this boat", new_boat_booking_path(@boat) %>
+<% end %>
 <br>
 <%= link_to 'Choose another',
   boats_path
 %>
 <br>
+<%# An owner of a boat can't review his own boat %>
+<% unless policy(@boat).edit? %>
 <%= link_to "Review this boat", new_boat_review_path(@boat) %>
+<% end %>
 <br>
-<%# Delete should only be visible to Owner %>
+<%# Edit only visible to Owner if true %>
+<% if policy(@boat).edit? %>
 <%= link_to 'Edit this listing', edit_boat_path%>
+<% end %>
 <br>
+<%# Delete only visible to Owner if true %>
+<% if policy(@boat).destroy? %>
 <%= link_to 'Delete',
   boat_path(@boat),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+<% end %>
 <br>
 </div>
