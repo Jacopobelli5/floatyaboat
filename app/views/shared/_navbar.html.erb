@@ -1,26 +1,29 @@
 
-<nav class="navbar navbar-light bg-light p-3 mb-3 border-bottom bg-white">
-      <%= link_to root_path do %>
-      <img class="logo" src=" <%= asset_path('logo.png') %>" alt="logo" width="100px">
-      <% end %>
-
-      <form class="form-inline">
-        <%= link_to "About us", about_path, class: "btn btn-secondary btn-rounded" %>
-
-        <% if user_signed_in? %>
-        <%= link_to "List your boat", new_boat_path, class: "btn btn-secondary btn-rounded" %>
-        <% else %>
-        <%= link_to "List your boat", new_user_session_path, class: "btn btn-secondary btn-rounded" %>
+<div class="container">
+  <nav class="navbar p-3 mb-3 bg-white ">
+        <%= link_to root_path do %>
+        <img class="logo" src=" <%= asset_path('logo.png') %>" alt="logo" width="100px">
+        <img class="logo" src=" <%= asset_path('logoname.png') %>" alt="logo" width="150px">
         <% end %>
 
-        <% if user_signed_in?  %>
-        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-secondary btn-rounded"  %>
-        <% end %>
+        <form class="form-inline">
 
-        <% if !user_signed_in? %>
-        <%= link_to "Log in", new_user_session_path, class: "btn btn-secondary btn-rounded" %>
+          <% if user_signed_in? %>
+          <%= link_to "List your boat", new_boat_path, class: "nav-text" %>
+          <% else %>
+          <%= link_to "List your boat", new_user_session_path, class: "nav-text" %>
+          <% end %>
 
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-rounded" %>
-        <% end %>
-      </form>
-</nav>
+          <% if user_signed_in?  %>
+          <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-text"  %>
+          <% end %>
+
+          <% if !user_signed_in? %>
+          <%= link_to "Log in", new_user_session_path, class: "nav-text" %>
+
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-text" %>
+          <%= link_to "About us", about_path, class: "nav-text" %>
+          <% end %>
+        </form>
+  </nav>
+</div>
