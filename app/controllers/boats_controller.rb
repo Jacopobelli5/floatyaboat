@@ -1,11 +1,13 @@
 class BoatsController < ApplicationController
-  before_action :set_boat, only: [:show, :destroy] # <- optional addd :edit and :update
+  before_action :set_boat, only: [:show, :destroy, :edit, :update]
 
   def index
+    @boats = policy_scope(Boat)
     if params[:query].present?
       @boats = Boat.where("address ILIKE ?", "%#{params[:query]}%")
     else
-      @boats = Boat.all
+      # @boats = Boat.all
+      @boats = policy_scope(Boat)
     end
   end
 
@@ -14,11 +16,13 @@ class BoatsController < ApplicationController
 
   def new
     @boat = Boat.new
+    authorize @boat
   end
 
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
+    authorize @boat
     if @boat.save
       redirect_to boat_path(@boat)
     else
@@ -26,15 +30,16 @@ class BoatsController < ApplicationController
     end
   end
 
-  # Optional actions
+  def edit
+  end
 
-  # def edit
-  # end
-
-  # def update
-  # @boat.update(boat_params)
-  # redirect_to boat_path(@boat)
-  # end
+  def update
+    if @boat.update(boat_params)
+      redirect_to boat_path(@boat), notice: "Boat listing succesfully updated"
+    else
+      render "edit"
+    end
+  end
 
   def destroy
     @boat.destroy
@@ -49,5 +54,6 @@ class BoatsController < ApplicationController
 
   def set_boat
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 end
