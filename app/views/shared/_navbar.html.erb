@@ -7,22 +7,21 @@
         <% end %>
 
         <form class="form-inline">
+          <%= link_to "About us", about_path, class: "button-white" %>
 
           <% if user_signed_in? %>
-          <%= link_to "List your boat", new_boat_path, class: "nav-text" %>
+          <%= link_to "List your boat", new_boat_path, class: "button-white" %>
           <% else %>
-          <%= link_to "List your boat", new_user_session_path, class: "nav-text" %>
+          <%= link_to "List your boat", new_user_session_path, class: "button-white" %>
           <% end %>
 
           <% if user_signed_in?  %>
-          <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-text"  %>
+          <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "button-white"  %>
           <% end %>
 
           <% if !user_signed_in? %>
-          <%= link_to "Log in", new_user_session_path, class: "nav-text" %>
-
-          <%= link_to "Sign up", new_user_registration_path, class: "nav-text" %>
-          <%= link_to "About us", about_path, class: "nav-text" %>
+          <%= link_to "Log in", new_user_session_path, class: "button-white" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "button-white" %>
           <% end %>
         </form>
   </nav>
