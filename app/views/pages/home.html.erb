@@ -4,13 +4,11 @@
     <div class="centered">
       <h1 class="time_to">It's time to <img class="img-fluid" src="<%= asset_path('logoname.png') %>" style="width:30%;"> !</h1>
       <h2>The best solution for your boat hire plans</h2>
-        <div class="search-box">
-        <%= render "shared/search" %>
-        </div>
     </div>
   </div>
-  <br>
-
+  <div class="search-box">
+    <%= render "shared/search" %>
+  </div>
   <br>
   <%= link_to "Explore Boats", boats_path, style: "font-weight:600", class: "btn btn-primary text-white" %>
   <br>
