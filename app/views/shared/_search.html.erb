@@ -1,24 +1,8 @@
-<div class="search-bar mt-3 p-3 p-lg-1 ps-lg-4">
+<div class="search-bar mt-3 p-3 p-lg-6 ps-lg-4">
     <form action="#">
-      <div class="row px-2">
-        <div class="col-lg-4 d-flex align-items-center form-group">
-          <input class="form-control border-0 shadow-0" type="text" name="search" placeholder="Where would you like to go boating?">
-        </div>
-        <div class="col-lg-3 d-flex align-items-center form-group ">
-          <div class="input-label-absolute input-label-absolute-right w-100">
-            <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
-          </div>
-          <div class="input-label-absolute input-label-absolute-right w-100">
-            <input class="form-control border-0 shadow-0" type="text" placeholder="End date" id="date" onfocus="(this.type='date')">
-          </div>
-        </div>
-        <div class="col-lg-3 d-flex align-items-center form-group">
-          <div class="input-label-absolute input-label-absolute-right w-100">
-            <input class="form-control border-0 shadow-0" type="text" name="type" placeholder="Any type?" id="type">
-          </div>
-        </div>
-        <div class="col-lg-2 d-grid">
-        <%= form_tag boats_path, method: :get, class: "d-flex" do %>
+      <div class="row">
+        <div class="col-12" style="display: flex;">
+        <%= form_tag boats_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",

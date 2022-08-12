@@ -1,19 +1,17 @@
-<div class="container">
-  <div class="well full-width">
-  <img class="banner" src="<%= asset_path('banner.png') %>">
-    <div class="centered">
-      <h1 class="time_to">It's time to <img class="img-fluid" src="<%= asset_path('logoname.png') %>" style="width:30%;"> !</h1>
-      <h2>The best solution for your boat hire plans</h2>
-        <div class="search-box">
-        <%= render "shared/search" %>
-        </div>
+<div class="container col-12">
+  <div class="banner" style="display: flex;">
+    <img class="col-12"  src="<%= asset_path('banner2.png') %>">
+    <div class="search-box">
+      <div class="banner-text">
+        <h1>It's time to <img src="<%= asset_path('logoname.png') %>" style="width:30%;">!</h1>
+        <p>The best solution for your boat hire plans</p>
+      </div>
+      <%= render "shared/search" %>
     </div>
   </div>
-  <br>
 
   <br>
   <%= link_to "Explore Boats", boats_path, style: "font-weight:600", class: "btn btn-primary text-white" %>
-  <br>
   <br>
   <br>
   <h2>Our Community Favorites</h2>
