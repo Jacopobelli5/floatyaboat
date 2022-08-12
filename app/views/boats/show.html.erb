@@ -1,44 +1,61 @@
-<div>
-<h1><%= @boat.name%></h1>
-<div>
-<% @boat.photos.each do |photo| %>
-<%= cl_image_tag photo.key, height: 200, width: 300, crop: :fit %>
-<% end %>
-<div>
-<p><%= @boat.boat_type.capitalize %></p>
-<p><%= @boat.address %></p>
-<p><%= @boat.description %></p>
-<p>£<%= @boat.price %>.00 / day</p>
-<p>⭐<%= @boat.average_rating %></p>
-</div>
-<div>
+<div class="container">
+  <div>
+    <p class="boat-title">
+      <%= @boat.name %>
+    </p>
+    <p class="boat-rating">
+      <u>⭐<%=@boat.average_rating %></u> ⋅ <u><%= @boat.address %></u>
+    </p>
+  </div>
+<br>
 
-<%= render "reviews" %>
-<%# An owner of a boat can't book his own boat %>
-<% unless policy(@boat).edit? %>
-<%= link_to "Book this boat", new_boat_booking_path(@boat) %>
-<% end %>
-<br>
-<%= link_to 'Choose another',
-  boats_path
-%>
-<br>
-<%# An owner of a boat can't review his own boat %>
-<% unless policy(@boat).edit? %>
-<%= link_to "Review this boat", new_boat_review_path(@boat) %>
-<% end %>
-<br>
-<%# Edit only visible to Owner if true %>
-<% if policy(@boat).edit? %>
-<%= link_to 'Edit this listing', edit_boat_path%>
-<% end %>
-<br>
-<%# Delete only visible to Owner if true %>
-<% if policy(@boat).destroy? %>
-<%= link_to 'Delete',
-  boat_path(@boat),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-<% end %>
-<br>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="<%= asset_path('boats/3.jpg')%>" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="<%= asset_path('boats/4.jpg')%>" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="<%= asset_path('boats/5.jpg')%>" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-3 col-md-4 border ">
+      <div class="form-inline">
+        <form class="form-floating">
+          <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
+          <label for="floatingInputValue" style="text-align: left;">Check-in</label>
+        </form>
+        <form class="form-floating">
+          <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
+          <label for="floatingInputValue" style="text-align: left;">Check-out</label>
+        </form>
+      </div>
+      <%= submit_tag "Search", style: "font-weight:600", class: "btn btn-info text-black" %>
+    </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
