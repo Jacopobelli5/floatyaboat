@@ -33,13 +33,13 @@ p {
   font-size: 16px;
 }
 
-.search-box {
+.search-box-home {
   position: absolute;
   margin: auto;
   width: 50%;
   display: block;
   background: linear-gradient(60deg, #0538FF 13.4%, #6B57F5 86.6%);
-  border-radius: 10px;
+  border-radius: $border-radius-sm;
   bottom: -20px;
   left: 300px;
 }
