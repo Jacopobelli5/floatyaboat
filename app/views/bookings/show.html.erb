@@ -1,13 +1,26 @@
-<h1>Congratulations, your booking has been confirmed</h1>
-<div>
-<%day = @booking.end_date - @booking.start_date  %>
-<p>price: <%= @booking.boat.price * day.to_i %></p>
+<div class="container-confirmation">
+<h1><strong>Congratulations, your booking has been confirmed</strong></h1>
+  <br>
+  <h2><strong>Your trip details</strong></h2>
+  <br>
+  <h3><strong>Start Date:</strong> <%= @booking.start_date %> | <strong>End Date:</strong> <%= @booking.end_date %></h3>
 
-<h2>Booking id: <%= @booking.id %></h2>
-<h3>Start date: <%= @booking.start_date %> End date: <%= @booking.end_date %></h3>
-<p><%= @booking.boat.name %></p>
-<p>Location: <%= @booking.boat.address %></p>
+  <%day = @booking.end_date - @booking.start_date  %>
+  <h3><strong>Total price:</strong> <%= @booking.boat.price * day.to_i %></h3>
+<div class= "container info">
+  <h3><strong><%= @booking.boat.name %></strong></h3>
+  <p><strong>Location:</strong> <%= @booking.boat.address %></p>
+  <p><%= @booking.boat.description %></p>
+  <br>
+<% @booking.boat.photos.each do |photo| %>
+<%= cl_image_tag photo.key, height: 700, width: 900, crop: :fit %>
+<% end %>
 </div>
+<br>
+<br>
 <div>
 <%= link_to "Back to home page", root_path %>
 </div>
+</div>
+<br>
+<br>
