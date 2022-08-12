@@ -39,23 +39,64 @@
         </button>
       </div>
     </div>
-    <div class="col-3 col-md-4 border ">
+    <div class="col-3 col-md-4 border">
+      <div class="card-header" style="display: flex; justify-content: space-between;">
+        <p class="pt-1" style="flex-basis;"><strong>£<%= @boat.price %></strong>/ day</p>
+        <p class="pt-1" style="flex-basis;"> <u>⭐<%=@boat.average_rating %></u></p>
+      </div>
+
       <div class="form-inline">
         <form class="form-floating">
           <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
           <label for="floatingInputValue" style="text-align: left;">Check-in</label>
         </form>
+        <br>
         <form class="form-floating">
           <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
           <label for="floatingInputValue" style="text-align: left;">Check-out</label>
         </form>
+        <br>
+        <button type="button" class="btn btn-primary col-12">
+          <% unless policy(@boat).edit? %>
+          <%= link_to "Book this boat", new_boat_booking_path(@boat), style: "font-weight:400", class: "text-white" %>
+          <% end %>
+        </button>
+        <br>
+        <p id="nocharge">You wont be charged yet.</p>
       </div>
-      <%= submit_tag "Search", style: "font-weight:600", class: "btn btn-info text-black" %>
+      <br>
+      <div class="card-header" style="display: flex; justify-content: space-between;">
+        <p class="pt-1" style="flex-basis;"><strong>Total</strong></p>
+        <p class="pt-1" style="flex-basis;"><strong>£<%= @boat.price %></strong> X number of days</p>
+      </div>
     </div>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  </div>
+  <div class="col-12 mt-3" style="text-align: left">
+    <u>⭐<%=@boat.average_rating %></u>
+    <%= render "reviews" %>
+<%# An owner of a boat can't book his own boat %>
+    <%= link_to 'Choose another',
+      boats_path
+    %>
+    <br>
+    <%# An owner of a boat can't review his own boat %>
+    <% unless policy(@boat).edit? %>
+    <%= link_to "Review this boat", new_boat_review_path(@boat) %>
+    <% end %>
+    <br>
+    <%# Edit only visible to Owner if true %>
+    <% if policy(@boat).edit? %>
+    <%= link_to 'Edit this listing', edit_boat_path%>
+    <% end %>
+    <br>
+    <%# Delete only visible to Owner if true %>
+    <% if policy(@boat).destroy? %>
+    <%= link_to 'Delete',
+      boat_path(@boat),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+    <% end %>
+    <br>
+  </div>
+  </div>
 </div>

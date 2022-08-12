@@ -30,3 +30,21 @@
   flex: auto;
   display: block;
 }
+
+
+.card-header {
+ margin: 0;
+ display: inline-block;
+}
+
+#nocharge {
+  color: gray;
+  font-size: 12px;
+  font-weight: 100;
+  text-shadow: 0.1px 0.1px 0.1px #000;
+}
+
+#buttonstyle{
+  color: red;
+  border-radius: 5px solid;
+}
