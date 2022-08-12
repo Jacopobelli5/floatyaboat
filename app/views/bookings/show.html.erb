@@ -13,7 +13,7 @@
   <p><%= @booking.boat.description %></p>
   <br>
 <% @booking.boat.photos.each do |photo| %>
-<%= cl_image_tag photo.key, height: 700, width: 900, crop: :fit %>
+<%= cl_image_tag photo.key, height: 700, width: 900, crop: :fit, class: "img-booking" %>
 <% end %>
 </div>
 <br>
