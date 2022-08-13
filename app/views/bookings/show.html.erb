@@ -6,7 +6,7 @@
   <h3><strong>Start Date:</strong> <%= @booking.start_date %> | <strong>End Date:</strong> <%= @booking.end_date %></h3>
 
   <%day = @booking.end_date - @booking.start_date  %>
-  <h3><strong>Total price:</strong> <%= @booking.boat.price * day.to_i %></h3>
+  <h3><strong>Total price: £</strong><%= @booking.boat.price * day.to_i %>.00</h3>
 <div class= "container info">
   <h3><strong><%= @booking.boat.name %></strong></h3>
   <p><strong>Location:</strong> <%= @booking.boat.address %></p>
