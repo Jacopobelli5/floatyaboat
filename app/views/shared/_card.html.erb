@@ -1,6 +1,7 @@
 <div class= "row">
     <% @boats.each do |boat| %>
       <div class= "col-4">
+      <%= link_to boat do %>
         <div class="card-trip mt-3">
           <% boat.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fit %>
@@ -12,6 +13,7 @@
           </div>
           <h2 class="card-trip-pricing">£ <%= boat.price %>.00</h2>
         </div>
+        <% end %>
       </div>
     </div>
     <% end %>

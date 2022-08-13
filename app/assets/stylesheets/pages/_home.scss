@@ -36,4 +36,18 @@ p {
 .banner-text {
   position: relative;
   left: 2.5%;
+=======
+.search-box-home {
+  position: absolute;
+  margin: auto;
+  width: 50%;
+  display: block;
+  background: linear-gradient(60deg, #0538FF 13.4%, #6B57F5 86.6%);
+  border-radius: $border-radius-sm;
+  bottom: -20px;
+  left: 300px;
 }
+
+.well{
+  position: relative;
+  margin-bottom: 20px;
