@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <p class="boat-title">
-      <%= @boat.name %>
+     <strong><%= @boat.name %></strong>
     </p>
     <p class="boat-rating">
       <u>⭐<%=@boat.average_rating %></u> ⋅ <u><%= @boat.address %></u>
@@ -19,15 +19,14 @@
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
+        <% @boat.photos.each do |photo| %>
+         <div class="carousel-item active">
+          <%= cl_image_tag photo.key.first, height: 600, width: 900, crop: :fit %>
+          </div>
           <div class="carousel-item active">
-            <img src="<%= asset_path('boats/3.jpg')%>" class="d-block w-100" alt="...">
+          <%= cl_image_tag photo.key, height: 600, width: 900, crop: :fit %>
           </div>
-          <div class="carousel-item">
-            <img src="<%= asset_path('boats/4.jpg')%>" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="<%= asset_path('boats/5.jpg')%>" class="d-block w-100" alt="...">
-          </div>
+          <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
