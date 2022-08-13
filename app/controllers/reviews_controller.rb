@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_boat, only: [ :new, :create ]
+  before_action :set_boat, only: [ :new, :create, :update, :show ]
 
   def new
     @review = Review.new
