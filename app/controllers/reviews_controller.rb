@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    authorize @review
   end
 
   def create
@@ -11,6 +12,7 @@ class ReviewsController < ApplicationController
     @review.boat = Boat.find(params[:boat_id])
     @review.save
     redirect_to boat_path(@boat)
+    authorize @review
   end
 
   private
