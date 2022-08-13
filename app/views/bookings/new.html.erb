@@ -1,7 +1,10 @@
-<h1>Hire a boat</h1>
-
-<%= simple_form_for [@boat, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="container d-flex flex-column align-items-center">
+  <h1>Hire a boat</h1>
+  <div class="w-50">
+   <%= simple_form_for [@boat, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
