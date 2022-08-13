@@ -46,7 +46,7 @@
             <p><strong><%= boat.address %></strong></p>
             <p><%= boat.boat_type %></p><br>
             <p class="description"><%= truncate(boat.description, :length => 180) %></p>
-            <p><%=boat.average_rating %>⭐</p>
+            <p><%=boat.average_rating %>⭐ (<%= boat.reviews.count%> reviews )</p>
           </div>
           <div class="card-boat-price">
             <p><strong>£<%= boat.price %>.00/day</strong></p>
