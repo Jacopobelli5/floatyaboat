@@ -1,7 +1,54 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.body-main {
+ display: flex;
+ justify-content: space-between;
+}
+
+.left-col {
+  flex: 0 0 320px;
+  padding-top: 96px;
+}
+
+.right-col {
+  padding-top: 48px;
+}
+
+.card-boat-lg{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px;
+  background: transparent;
+  width: 840px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  margin-right: 0;
+}
+
+.card-boat-lg img {
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.card-boat-lg h2, p {
+  margin: 0;
+}
+
+.description {
+  color: $navy;
+  text-align: left;
+}
+
+.card-boat-lg p {
+
+}
+
+.card-boat-price {
+  justify-content: end !important;
+  color: $navy;
+}
+
+a .hover {
+  box-shadow:0 0 15px rgba(232, 240, 254,.8);
 }
 
 // Smallest device
@@ -37,37 +84,4 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-.card-boat {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
-
-.card-boat img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-boat h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-boat p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-boat .card-boat-infos {
-  padding: 16px;
 }
