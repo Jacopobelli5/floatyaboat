@@ -1,22 +1,5 @@
 .banner {
-  display: block;
-  width: 100vw;
-  max-height: 600px;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-.centered {
-  position: absolute;
-  text-align: left;
-  top: 30%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  text-shadow: 1px 1px 1px #000;
-  display: block;
+  display: flex;
 }
 
 h1 {
@@ -26,13 +9,34 @@ h1 {
 h2{
   font-size: 30px;
   font-family: $headers-font;
-  text-shadow: 0.1px 0.1px 0.1px #000;
 }
 
 p {
   font-size: 16px;
 }
 
+.search-box {
+  opacity: 85%;
+  text-align: left;
+  color: white;
+  height: auto;
+  padding: 20px;
+  position: absolute;
+  display: block;
+  background: linear-gradient(60deg, #0538FF 13.4%, #6B57F5 86.6%);
+  border-radius: 10px;
+  width: 900px;
+  height: 210px;
+  z-index: 15;
+  top: 55%;
+  left: 30%;
+  margin: -100px 0 0 -150px;
+}
+
+.banner-text {
+  position: relative;
+  left: 2.5%;
+=======
 .search-box-home {
   position: absolute;
   margin: auto;
@@ -47,4 +51,3 @@ p {
 .well{
   position: relative;
   margin-bottom: 20px;
-}
