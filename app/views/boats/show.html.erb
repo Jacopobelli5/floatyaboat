@@ -46,28 +46,12 @@
       </div>
 
       <div class="form-inline">
-        <form class="form-floating">
-          <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
-          <label for="floatingInputValue" style="text-align: left;">Check-in</label>
-        </form>
-        <br>
-        <form class="form-floating">
-          <input class="form-control border-0 shadow-0" type="text" placeholder="Start date" id="date" onfocus="(this.type='date')">
-          <label for="floatingInputValue" style="text-align: left;">Check-out</label>
-        </form>
-        <br>
-        <button type="button" class="btn btn-primary col-12">
-          <% unless policy(@boat).edit? %>
-          <%= link_to "Book this boat", new_boat_booking_path(@boat), style: "font-weight:400", class: "text-white" %>
-          <% end %>
-        </button>
+      <%= render "bookings/booking-form" %>
         <br>
         <p id="nocharge">You wont be charged yet.</p>
       </div>
       <br>
       <div class="card-header" style="display: flex; justify-content: space-between;">
-        <p class="pt-1" style="flex-basis;"><strong>Total</strong></p>
-        <p class="pt-1" style="flex-basis;"><strong>£<%= @boat.price %></strong> X number of days</p>
       </div>
     </div>
   </div>
