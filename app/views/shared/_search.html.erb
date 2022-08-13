@@ -1,8 +1,8 @@
 <div class="search-bar mt-3 p-3 p-lg-6 ps-lg-4">
-    <form action="#">
-      <div class="row">
-        <div class="col-12" style="display: flex;">
+
         <%= form_tag boats_path, method: :get do %>
+        <div class="row">
+        <div class="col-12" style="display: flex;">
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
@@ -12,5 +12,4 @@
         <% end %>
         </div>
       </div>
-    </form>
 </div>
