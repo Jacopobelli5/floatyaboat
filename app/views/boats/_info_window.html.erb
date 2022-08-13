@@ -1,2 +1,11 @@
-<h2><%= boat.name %></h2>
-<p><%= boat.address %></p>
+<%= link_to boat do  %>
+    <div class="card-trip mt-3">
+      <% boat.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fit %>
+      <% end %>
+      <div class="card-trip-infos">
+        <h2><%= boat.name %></h2>
+        <h2 class="card-trip-pricing">£ <%= boat.price %>.00</h2>
+      </div>
+    </div>
+<% end %>
