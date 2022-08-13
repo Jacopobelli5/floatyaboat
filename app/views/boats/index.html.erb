@@ -1,25 +1,67 @@
-<h1>Boats</h1>
-  <div class= "cards">
-  <% @boats.each do |boat| %>
-  <%= link_to boat do %>
-    <div class= "card-boat">
-      <div class="card-boat-infos">
-        <p><%= boat.name %></p>
-        <p><%= boat.address %></p>
-        <p><%= boat.boat_type %></p>
-        <p><strong>£<%= boat.price %>.00/day</strong></p>
-        <p>⭐<%=boat.average_rating %></p>
+<div class="body-main">
+  <div class="search-box-index">
+    <%= render "shared/search_index" %>
+  </div>
+<div class="left-col">
+  <div class="wrapper">
+    <header>
+      <h2>Price Range</h2>
+      <p>Use slider or enter min and max price</p>
+    </header>
+    <div class="price-input">
+      <div class="field">
+        <span>Min</span>
+        <input type="number" class="imput-min" value="100">
+      </div>
+          <div class="separator">-</div>
+          <div class="field">
+            <span>Max</span>
+            <input type="number" class="imput-max" value="8000">
+          </div>
+          <div class="slider">
+            <div class="progress"></div>
+          </div>
       </div>
     </div>
-    <br>
-<% end %>
-<% end %>
- </div>
+    <div class="filter">
+        <p> ADD Type filtering here<p>
+      </div>
+    </div>
+    <div class="right-col">
+      <% if params[:query].present? %>
+      <p>Found <%= @boats.count %> boats in <%=params[:query].capitalize %></p>
+        <% else %>
+      <p> Total <%= @boats.count %> boats available for hire</p>
+      <% end %>
+      <br>
+      <% @boats.each do |boat| %>
+        <%= link_to boat do %>
+        <div class= "card-boat-lg">
+        <% boat.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fit %>
+        <% end %>
+          <div class="card-boat-infos">
+            <h2><%= boat.name %></h2>
+            <p><strong><%= boat.address %></strong></p>
+            <p><%= boat.boat_type %></p><br>
+            <p class="description"><%= truncate(boat.description, :length => 180) %></p>
+            <p><%=boat.average_rating %>⭐</p>
+          </div>
+          <div class="card-boat-price">
+            <p><strong>£<%= boat.price %>.00/day</strong></p>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    <% end %>
+<%= render "shared/map" %>
+<br>
+<br>
+</div>
+</div>
+<div class="nav-bottom">
 <%= link_to "List your boat", new_boat_path %>
 <br>
 <%= link_to "Back to home page", root_path %>
 <br>
-
-<%= render "shared/map" %>
-<br>
-<br>
+</div>
