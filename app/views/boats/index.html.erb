@@ -42,9 +42,9 @@
           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fit %>
         <% end %>
           <div class="card-boat-infos">
-            <h2><%= boat.name %></h2>
-            <p><strong><%= boat.address %></strong></p>
-            <p><%= boat.boat_type %></p><br>
+            <h2><strong><%= boat.name %></strong></h2>
+            <p>Address: <strong><%= boat.address %></strong></p>
+            <p>Boat Type: <strong><%= boat.boat_type %></strong></p><br>
             <p class="description"><%= truncate(boat.description, :length => 180) %></p>
             <p><%=boat.average_rating %>⭐</p>
           </div>
