@@ -49,7 +49,15 @@ p {
   left: 300px;
 }
 
-.well{
-  position: relative;
-  margin-bottom: 20px;
+.footer {
+  background-color: $gray;
+  box-shadow: 0 50vh 0 50vh #000;
+}
+
+.list-layout2 {
+  overflow:hidden;
+}
+
+.list-contrast2 {
+  display:inline-block;
 }
