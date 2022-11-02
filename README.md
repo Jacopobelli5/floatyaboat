@@ -1,24 +1,32 @@
-# Floatyaboat
+# Floatyaboat 
 
-### About
+## About
 
-This is a web application built on Rails as part of our first bootcamp project as a team.
-The target was to create a functional MVP based on the MVC pattern by taking inspiration from AirBnb in just 5 course days.
+This is a web application built on Rails as part of our first coding bootcamp project as a team.
+The target was to create a functional MVP based on the MVC pattern by taking inspiration from AirBnb in just 4 course days.
 
 
-### What this app does
+## What this app does
 
-Users can search and rent boats for leisure. An owner can also list their boat(s) on the site.
+A platform that helps users to search for and rent boats for leisure.
 
-### Links
+As a boat owner you can list your boat(s) for hire and check your bookings.
 
-You can find the app here [floatyaboat](https://floatyaboat.herokuapp.com/)
+## Links
 
-### Built with
+You can find the app which is hosted on Heroku here: *[floatyaboat](https://floatyaboat.herokuapp.com/)*
+
+## Built using
+
+### Technology stack
 
 - Ruby on Rails
 - HTML & SCSS
 - Bootstrap
 - JavaScript
-- Figma for design prototype
-- Deployed with Heroku
+
+### Tools
+
+- Figma
+- Mapbox
+- Cloudinary
