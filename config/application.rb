@@ -21,6 +21,8 @@ module Floatyaboat
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
+    # allow rails to whitelist urls from railway.app
+    config.hosts << /[a-z0-9\-]+\.up\.railway\.app/
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
