@@ -1,4 +1,4 @@
-# Floatyaboat 
+# Floatyaboat
 
 ## About
 
@@ -14,7 +14,7 @@ As a boat owner you can list your boat(s) for hire and check your bookings.
 
 ## Links
 
-You can find the app which was deployed via ~~Heroku~~ Railway here: *[floatyaboat](https://floatyaboat.up.railway.app/)*
+You can find the app which was deployed via Heroku here: *[floatyaboat](https://floatyaboat.herokuapp.com/)*
 
 ## Built using
 
@@ -30,5 +30,3 @@ You can find the app which was deployed via ~~Heroku~~ Railway here: *[floatyabo
 - Figma
 - Mapbox
 - Cloudinary
-
-
