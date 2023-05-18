@@ -1,1 +1,11 @@
-<p>TODO Edit form</p>
+<div class="container col-5 mt-5 text-center">
+  <%= simple_form_for @boat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :boat_type %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit class: 'btn button-white mt-4 mb-5' %>
+  <% end %>
+</div>
