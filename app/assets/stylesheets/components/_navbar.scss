@@ -1,13 +1,14 @@
-.button-white{
+.button-white {
   font-family: $body-font;
   align-items: center;
   color: $blue;
   font-size: 16px;
-  margin-left: 20px;
-  padding: 12px 24px;
+  margin-left: 16px;
+  padding: 12px 20px;
   border-radius: 24px;
   opacity: 0.9;
   transition: all 0.4s ease;
+
   &:hover {
     opacity: 1;
     border: 1px solid $blue;
