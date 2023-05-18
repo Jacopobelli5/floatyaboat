@@ -5,19 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-##puts "cleaning database"
-#Boat.destroy_all
-#puts "creating database"#
-
-#20.times do
-#  boat = Boat.create(
-#    name: Faker::TvShows::Friends.character,
-#    address: Faker::Address.street_address,
-#    price: rand(100..1500),
-#    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true)
-#  )
-#  puts "boat with id #{boat.id} has been created!"
-#end
 
 User.destroy_all
 # following 3 lines of code reset the id count back to 1, useful in dev testing

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/about', to: "pages#about"
   resources :boats do
-    resources :bookings, only: [:new, :create, :edit]
-    resources :reviews, only: [ :new, :create ]
+    resources :bookings, only: %i[new create edit]
+    resources :reviews, only: %i[new create]
   end
   resources :bookings, only: [:show]
 end
