@@ -1,23 +1,17 @@
-<div class="container col-12">
-  <div class="banner" style="display: flex;">
-    <img class="col-12"  src="<%= asset_path('banner2.png') %>">
-    <div class="search-box">
-      <div class="banner-text">
-        <h1>It's time to <img src="<%= asset_path('logoname.png') %>" style="width:30%;">!</h1>
-        <p>The best solution for your boat hire plans</p>
-      </div>
-      <%= render "shared/search" %>
-    </div>
+<div class="home-image-container">
+  <img src="<%= asset_path('banner2.png') %>">
+  <div class="home-banner-text">
+    <h1>It's time to <img src="<%= asset_path('logoname.png') %>" style="width:35%;"></h1>
+    <h5> The best solution for your boat hire plans</h5>
   </div>
-
-  <br>
-  <%= link_to "Explore Boats", boats_path, style: "font-weight:600", class: "btn btn-primary text-white" %>
-  <br>
-  <br>
-  <h2>Our Community Favorites</h2>
-  <%= render "shared/card" %>
+  <%= render "shared/search" %>
 </div>
-
+<br>
+<%= link_to "Explore Boats", boats_path, style: "font-weight:600", class: "btn btn-primary text-white mt-2" %>
+<br>
+<br>
+<h2>Our Community Favorites</h2>
+<%= render "shared/card" %>
 <br>
 <br>
 <br>
