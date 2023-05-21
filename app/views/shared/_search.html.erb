@@ -1,15 +1,14 @@
-<div class="search-bar mt-3 p-3 p-lg-6 ps-lg-4">
-
-        <%= form_tag boats_path, method: :get do %>
-        <div class="row">
-        <div class="col-12" style="display: flex;">
+<div class="home-search-bar p-3 p-lg-6 ps-lg-4">
+  <%= form_tag boats_path, method: :get do %>
+    <div class="row">
+      <div class="col-12" style="display: flex;">
         <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Enter location"
+        params[:query],
+        class: "form-control",
+        placeholder: "Enter location"
         %>
         <%= submit_tag "Search", style: "font-weight:600", class: "btn btn-info text-black" %>
-        <% end %>
-        </div>
       </div>
+    </div>
+  <% end %>
 </div>

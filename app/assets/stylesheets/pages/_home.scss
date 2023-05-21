@@ -1,66 +1,43 @@
-.banner {
-  display: flex;
-}
-
-h1 {
-  font-size: 50px;
-}
-
-h2{
-  font-size: 30px;
-  font-family: $headers-font;
-}
-
-p {
-  font-size: 16px;
-}
-
-.search-box {
-  opacity: 85%;
-  text-align: left;
-  color: white;
-  height: auto;
-  padding: 20px;
-  position: absolute;
-  display: block;
-  background: linear-gradient(60deg, #0538FF 13.4%, #6B57F5 86.6%);
-  border-radius: 10px;
-  width: 900px;
-  height: 210px;
-  z-index: 15;
-  top: 55%;
-  left: 30%;
-  margin: -100px 0 0 -150px;
-}
-
-.banner-text {
+.home-image-container {
   position: relative;
-  left: 2.5%;
 }
 
-.search-box-home {
-  position: absolute;
-  margin: auto;
+.home-image-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.home-search-bar {
   width: 50%;
+  position: absolute;
+  justify-content: center;
+  top: 83%;
+  left: 25%;
+}
+
+.home-banner-text {
+  position: absolute;
   display: block;
-  background: linear-gradient(60deg, #0538FF 13.4%, #6B57F5 86.6%);
-  border-radius: $border-radius-sm;
-  bottom: -20px;
-  left: 300px;
+  color: white;
+  border-radius: 0 4em 0 0;
+  width: 48%;
+  opacity: 88%;
+  margin-top: 0.75rem;
+  right: 52%;
+  bottom: 18%;
+  background: linear-gradient(60deg, #008EAC 20%, #00D6EF 80.0%);
 }
 
 .footer {
   background-color: $gray;
-
 }
 
 .list-layout2 {
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .list-contrast2 {
-  display:inline-block;
-
+  display: inline-block;
 }
 
 ul li {

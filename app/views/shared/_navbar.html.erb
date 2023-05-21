@@ -1,28 +1,24 @@
-
 <div class="container">
-  <nav class="navbar p-3 my-3 bg-white ">
-        <%= link_to root_path do %>
-        <img class="logo" src=" <%= asset_path('logo.png') %>" alt="logo" width="100px">
-        <img class="logo" src=" <%= asset_path('logoname.png') %>" alt="logo" width="150px">
-        <% end %>
+  <nav class="navbar my-3 bg-white ">
+    <%= link_to root_path do %>
+     <img class="logo" src=" <%= asset_path('logo.png') %>" alt="logo" width="100px">
+     <img class="logo" src=" <%= asset_path('logoname.png') %>" alt="logo" width="150px">
+    <% end %>
 
-        <form class="form-inline">
-          <%= link_to "About us", about_path, class: "button-white" %>
-
-          <% if user_signed_in? %>
-          <%= link_to "List your boat", new_boat_path, class: "button-white" %>
-          <% else %>
-          <%= link_to "List your boat", new_user_session_path, class: "button-white" %>
-          <% end %>
-
-          <% if user_signed_in?  %>
-          <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "button-white"  %>
-          <% end %>
-
-          <% if !user_signed_in? %>
-          <%= link_to "Log in", new_user_session_path, class: "button-white" %>
-          <%= link_to "Sign up", new_user_registration_path, class: "button-white" %>
-          <% end %>
-        </form>
+    <form class="form-inline">
+      <%= link_to "About us", about_path, class: "button-white" %>
+      <% if user_signed_in? %>
+        <%= link_to "List your boat", new_boat_path, class: "button-white" %>
+      <% else %>
+        <%= link_to "List your boat", new_user_session_path, class: "button-white" %>
+      <% end %>
+      <% if user_signed_in?  %>
+        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "button-white"  %>
+      <% end %>
+      <% if !user_signed_in? %>
+        <%= link_to "Log in", new_user_session_path, class: "button-white" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "button-white" %>
+      <% end %>
+    </form>
   </nav>
 </div>
